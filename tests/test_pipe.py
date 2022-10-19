@@ -12,7 +12,7 @@ def hey(times):
     return 'hey!' * int(times)
 
 
-def tets_pipe_1():
+def test_pipe_1():
     pipe = Pipe()
     assert pipe.result is None
     assert pipe.steps == ''
