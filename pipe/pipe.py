@@ -44,9 +44,13 @@ if __name__ == '__main__':
     pipe = Pipe()
     pipe >> 1 >> add(1) >> multiply(2) >> reverse_args(sub)(1) >> reverse_args(divide)(3) >> add(3) >> hey
     print(f'{pipe.result = }')
+    # : pipe.result = 'hey!hey!hey!hey!'
     print(f'{pipe.steps = }')
+    # : pipe.steps = '1 >> 2 >> 4 >> 3 >> 1.0 >> 4.0 >> hey!hey!hey!hey!'
 
     pipe = Pipe()
     pipe >> [1, 2, 3] >> mapf(add(1)) >> filterf(is_even) >> len(pipe.result) >> hey
     print(f'{pipe.result = }')
+    # : pipe.result = 'hey!hey!'
     print(f'{pipe.steps = }')
+    # : pipe.steps = '[1, 2, 3] >> [2, 3, 4] >> [2, 4] >> 2 >> hey!hey!'
