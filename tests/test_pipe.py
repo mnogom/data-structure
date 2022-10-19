@@ -28,7 +28,7 @@ def test_pipe_2():
     pipe = Pipe()
     pipe >> 1 >> add(1) >> multiply(2) >> reverse_args(sub)(1) >> reverse_args(divide)(3) >> round >> add(3) >> hey
     assert pipe.result == 'hey!hey!hey!hey!'
-    assert pipe.steps == '1 >> 2 >> 4 >> 3 >> 1.0 >> 1 >> 4.0 >> hey!hey!hey!hey!'
+    assert pipe.steps == '1 >> 2 >> 4 >> 3 >> 1.0 >> 1 >> 4 >> hey!hey!hey!hey!'
 
 
 def test_pipe_3():
