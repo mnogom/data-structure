@@ -14,11 +14,15 @@ def hey(times):
 
 def tets_pipe_1():
     pipe = Pipe()
+    assert pipe.result is None
+    assert pipe.steps == ''
+
     pipe >> 1
     pipe >> 2
     pipe >> 3
     assert pipe.result == 3
     assert pipe.steps == '1 >> 2 >> 3'
+
 
 def test_pipe_2():
     pipe = Pipe()

@@ -1,6 +1,5 @@
 class Pipe:
-    def __init__(self, args=None):
-        self.__args = args
+    def __init__(self):
         self.__call_stack = []
 
     def __rshift__(self, next):
@@ -15,14 +14,14 @@ class Pipe:
 
     @property
     def result(self):
-        out = self.__args
+        out = None
         for next in self.__call_stack:
             out = self.__apply_fn(next, out)
         return out
 
     @property
     def steps(self):
-        out = self.__args
+        out = None
         steps = []
         for next in self.__call_stack:
             out = self.__apply_fn(next, out)
@@ -32,6 +31,7 @@ class Pipe:
 
 if __name__ == '__main__':
     from utils import add, sub, multiply, reverse_args, divide, mapf, filterf
+
 
     def is_even(num):
         return num % 2 == 0
