@@ -25,10 +25,7 @@ class Pipe:
         out = self.__args
         steps = []
         for next in self.__call_stack:
-            if callable(next):
-                out = next(out)
-            else:
-                out = next
+            out = self.__apply_fn(next, out)
             steps.append(out)
         return ' >> '.join(str(step) for step in steps)
 
