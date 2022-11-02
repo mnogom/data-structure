@@ -50,6 +50,7 @@ if __name__ == '__main__':
 
     pipe = Pipe()
     pipe >> [1, 2, 3] >> mapf(add(1)) >> filterf(is_even) >> len(pipe.result) >> hey
+
     print(f'{pipe.result = }')
     # : pipe.result = 'hey!hey!'
     print(f'{pipe.steps = }')

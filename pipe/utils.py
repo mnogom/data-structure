@@ -1,7 +1,7 @@
 def partial_fn(fn):
     def wrapper(*args):
-        def inner(f):
-            return fn(f, *args)
+        def inner(first_arg):
+            return fn(first_arg, *args)
         return inner
     return wrapper
 

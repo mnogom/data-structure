@@ -32,6 +32,8 @@ def test_reverse_args():
 def test_partial_fn():
     def sum(a, b):
         return a + b
+    add = partial_fn(sum)
+    assert add(1)(2) == 3
     add_5 = partial_fn(sum)(5)
     assert add_5(15) == 20
 
