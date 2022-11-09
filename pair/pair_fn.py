@@ -1,6 +1,3 @@
-from functools import reduce
-
-
 def cons(car, cdr):
     def inner(message):
         if message == 'car':
